@@ -26,6 +26,9 @@ st.title('Apple Stock Price Chart')
 df=pd.read_csv('https://raw.githubusercontent.com/iambharathvaj/Stock-Price-Prediction/master/AAPL.csv')
 st.write(df)
 
+tickers=['AAPL']
+yf.download(tickers,start='2009-09-14',end='2019-09-21')
+
 ticker_list=pd.read_csv('https://raw.githubusercontent.com/iambharathvaj/Stock-Price-Prediction/master/AAPL.csv')
 tickerSymbol=st.sidebar.selectbox('Stock ticker',ticker_list)
 tickerData=yf.Ticker(tickerSymbol)
