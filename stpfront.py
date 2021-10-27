@@ -4,6 +4,7 @@ Created on Wed Oct 27 15:36:19 2021
 
 @author: lifestyle
 """
+
 import pickle
 import streamlit as st
 import yfinance as yf
