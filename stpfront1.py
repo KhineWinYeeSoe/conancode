@@ -7,9 +7,8 @@ Created on Thu Oct 28 00:35:34 2021
 
 import pickle
 import streamlit as st
-#import yfinance as yf
+import yfinance as yf
 import pandas as pd 
-#import cufflinks as cf
 import datetime
 
 st.markdown('''
@@ -27,34 +26,32 @@ st.title('Apple Stock Price Chart')
 df=pd.read_csv('https://raw.githubusercontent.com/iambharathvaj/Stock-Price-Prediction/master/AAPL.csv')
 st.write(df)
 
-#tickers=['AAPL']
-#yf.download(tickers,start='2009-09-14',end='2019-09-21')
+tickers=['AAPL']
+yf.download(tickers,start='2009-09-14',end='2019-09-21')
 
-#ticker_list=pd.read_csv('https://raw.githubusercontent.com/iambharathvaj/Stock-Price-Prediction/master/AAPL.csv')
-#tickerSymbol=st.sidebar.selectbox('Stock ticker',ticker_list)
-#tickerData=yf.Ticker(tickerSymbol)
-#tickerDf=tickerData.history(period='1d',start=start_date,end=end_date)
+ticker_list=pd.read_csv('https://raw.githubusercontent.com/iambharathvaj/Stock-Price-Prediction/master/AAPL.csv')
+tickerSymbol=st.sidebar.selectbox('Stock ticker',ticker_list)
+tickerData=yf.Ticker(tickerSymbol)
+tickerDf=tickerData.history(period='1d',start=start_date,end=end_date)
 
 st.header('**Ticker data**')
 st.write('Chart Sample')
-#st.write(tickerDf)
+st.write(tickerDf)
 
+tickerSymbol ='AAPL'
 
+tickerData=yf.Ticker(tickerSymbol)
 
-#tickerSymbol ='AAPL'
-
-#tickerData=yf.Ticker(tickerSymbol)
-
-#tickerDf=tickerData.history(period='1d',start='2009-9-14',end='2019-9-21')
+tickerDf=tickerData.history(period='1d',start='2009-9-14',end='2019-9-21')
 
 st.write("""
          ##Closing Price
          """)
-#st.line_chart(tickerDf.Close)
+st.line_chart(tickerDf.Close)
 st.write("""
          ##Volume
          """)
-#st.line_chart(tickerDf.Volume)
+st.line_chart(tickerDf.Volume)
 
 
 with open('model.pkl', 'rb') as f:
