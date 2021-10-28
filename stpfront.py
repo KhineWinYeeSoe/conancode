@@ -11,6 +11,7 @@ import yfinance as yf
 import pandas as pd 
 #import cufflinks as cf
 import datetime
+import sklearn
 
 st.markdown('''
 #   APPLE Stock Price Prediction App
