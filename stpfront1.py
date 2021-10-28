@@ -10,6 +10,7 @@ import streamlit as st
 import yfinance as yf
 import pandas as pd 
 import datetime
+import sklearn
 
 st.markdown('''
 #   APPLE Stock Price Prediction App
